@@ -31,7 +31,9 @@ export default function App () {
     // This is stretch. Prevent the same movie from being "saved" more than once
   };
 
-  if (!movieList) return <div>Fetching movie list...</div>;
+  if (!movieList) {
+    return <div>Loading movie list...</div>;
+  }
 
   return (
     <div>
@@ -39,7 +41,7 @@ export default function App () {
 
       <Switch>
         <Route path={"/movies/:id"}>
-          <Movie movies={movieList}/>
+          <Movie />
         </Route>
         <Route path="/">
           <MovieList movies={movieList}/>
